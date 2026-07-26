@@ -687,20 +687,74 @@ fieldset {
   background: var(--terracotta) !important;
   color: #fffbed !important;
 }
-/* TEST DIAGNOSTIC */
+/* =========================
+   OUVERTURE — VERSION FINALE
+========================= */
 
 #envelopeScene {
-  background: yellow !important;
+  min-height: 100vh !important;
+  padding: 40px 24px !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+}
+
+#envelopeScene .eyebrow {
+  margin-bottom: 28px !important;
 }
 
 .envelope-button {
-  width: 600px !important;
-  height: 400px !important;
-  background: blue !important;
+  display: block !important;
+  width: min(82vw, 520px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
 
 .envelope {
-  width: 600px !important;
-  height: 400px !important;
-  background: red !important;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 1.45 / 1 !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  box-shadow: 0 24px 70px rgba(44, 52, 39, 0.18) !important;
+}
+
+.envelope-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    linear-gradient(
+      rgba(36, 49, 38, 0.04),
+      rgba(36, 49, 38, 0.04)
+    ),
+    url("assets/20260723-09h57-JJG_NZ8_6910.jpeg")
+    center / cover no-repeat !important;
+}
+
+.wax-seal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 82px !important;
+  height: 82px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  background: var(--terracotta) !important;
+  color: #fff8ed !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,255,255,.12),
+    0 8px 24px rgba(0,0,0,.22) !important;
+}
+
+.tap-hint {
+  margin-top: 24px !important;
+  text-align: center !important;
 }
