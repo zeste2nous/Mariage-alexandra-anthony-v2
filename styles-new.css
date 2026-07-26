@@ -48,7 +48,7 @@ select {
   text-align: center;
 }
 
-.scene.active {
+.scene.scene--active {
   display: grid;
 }
 
