@@ -620,3 +620,14 @@ fieldset {
     flex-wrap: wrap;
   }
 }
+/* ==========================================
+   SÉCURITÉ NAVIGATION — TOUJOURS EN DERNIER
+========================================== */
+
+.scene {
+  display: none !important;
+}
+
+.scene.active {
+  display: grid !important;
+}
