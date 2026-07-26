@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexandra & Anthony — 3 juillet 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app-shell">
+  <section id="envelopeScene" class="scene scene--active" aria-label="Ouverture de l'invitation">
+    <div class="ambient lemons-left" aria-hidden="true">🍋</div>
+    <div class="ambient lemons-right" aria-hidden="true">🍋</div>
+    <p class="eyebrow">Vous avez reçu une invitation</p>
+    <button id="envelopeButton" class="envelope-button" type="button" aria-label="Ouvrir l'enveloppe">
+      <span class="envelope" aria-hidden="true">
+        <span class="envelope-back"></span>
+        <span class="envelope-letter"><span class="monogram">A <i>&</i> A</span></span>
+        <span class="envelope-front"></span>
+        <span class="envelope-flap"></span>
+        <span class="wax-seal">A&A</span>
+      </span>
+    </button>
+    <p class="tap-hint">Cliquez sur l’enveloppe</p>
+  </section>
+
+  <section id="galleryScene" class="scene" aria-label="Galerie photo">
+    <article class="gallery-card">
+      <header class="gallery-heading">
+        <p class="eyebrow">Quelques instants à deux</p>
+        <h2>Venez partager avec nous<br>notre <em>Dolce Vita</em></h2>
+      </header>
+      <div class="photo-diptych">
+        <figure class="photo-frame photo-landscape"><img src="assets/gallery/alexandra-anthony-horizontal.webp" alt="Alexandra et Anthony" decoding="async"></figure>
+        <figure class="photo-frame photo-portrait"><img src="assets/gallery/alexandra-anthony-vertical.webp" alt="Alexandra et Anthony" decoding="async"></figure>
+      </div>
+      <button id="showInvitationFromGallery" class="primary-button" type="button">Découvrir notre journée</button>
+    </article>
+  </section>
+
+  <section id="invitationScene" class="scene" aria-label="Faire-part et réponse">
+    <article class="invitation-card">
+      <div class="olive-line">✦</div>
+      <p class="eyebrow">Save the date</p>
+      <h1>Alexandra <span>&</span> Anthony</h1>
+      <p class="intro">ont la joie de vous inviter à célébrer leur mariage</p>
+      <p class="wedding-theme">Une journée sous le signe de la <em>Dolce Vita</em></p>
+      <div class="date-block"><span class="day">03</span><span class="month">Juillet</span><span class="year">2027</span></div>
+      <div class="wedding-journey">
+        <section class="venue-block"><p class="venue-label">Cérémonie civile</p><h3>Mairie de Dammartin-en-Goële</h3><address>103 rue du Général-de-Gaulle<br>77230 Dammartin-en-Goële</address><time class="venue-time" datetime="13:45">13 h 45</time></section>
+        <div class="golden-route" aria-hidden="true"><span>✦</span></div>
+        <section class="venue-block"><p class="venue-label">Réception</p><h3>Domaine du Bois Saint-Mard</h3><address>11 rue du Maréchal Leclerc<br>60170 Tracy-le-Val</address></section>
+      </div>
+      <p class="adults-note">Pour savourer pleinement cette parenthèse avec vous, notre mariage se célébrera entre adultes, sans enfants ni compagnons à quatre pattes. Merci de votre douce compréhension.</p>
+      <div class="divider"></div>
+      <h2>Serez-vous des nôtres ?</h2>
+      <p class="response-deadline"><strong>Réponse obligatoire</strong> avant le <time datetime="2027-05-01">1<sup>er</sup> mai 2027</time></p>
+      <div id="personalInvitation" class="personal-invitation" hidden></div>
+      <form id="rsvpForm" class="rsvp-form">
+        <div id="identityFields" class="field-grid">
+          <label>Prénom<input id="firstName" name="first_name" type="text" autocomplete="given-name" placeholder="Votre prénom"></label>
+          <label>Nom<input id="lastName" name="last_name" type="text" autocomplete="family-name" placeholder="Votre nom"></label>
+        </div>
+        <fieldset><legend>Votre réponse</legend><div class="response-options">
+          <label class="choice"><input type="radio" name="response" value="oui" required><span>Oui</span></label>
+          <label class="choice"><input type="radio" name="response" value="peut-être"><span>Peut-être</span></label>
+          <label class="choice"><input type="radio" name="response" value="non"><span>Non</span></label>
+        </div></fieldset>
+        <div id="attendanceBlock" hidden><label>Combien d’entre vous seront présents ?<select id="attendanceCount" name="attendance_count"></select></label><p id="attendanceHint" class="small-note"></p></div>
+        <label>Allergies, régime alimentaire ou petit mot<textarea id="message" name="message" rows="4" placeholder="Dites-nous tout ici…"></textarea></label>
+        <button type="submit" class="primary-button full">Envoyer ma réponse</button>
+        <p id="formStatus" class="form-status" role="status"></p>
+      </form>
+    </article>
+  </section>
+
+  <section id="thanksScene" class="scene" aria-label="Confirmation">
+    <article class="thanks-card"><div class="big-lemon">🍋</div><p class="eyebrow">Grazie mille</p><h2>Votre réponse a bien été enregistrée.</h2><p>Nous avons hâte de partager cette journée avec vous.</p><button id="editResponse" class="text-button" type="button">Modifier ma réponse</button></article>
+  </section>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
