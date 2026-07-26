@@ -37,17 +37,19 @@
      NAVIGATION
   ========================================================= */
 
-  function showScene(sceneId) {
-    scenes.forEach(scene => {
-      const isActive = scene.id === sceneId;
-      scene.classList.toggle('active', isActive);
-    });
+function showScene(sceneId) {
+  scenes.forEach(scene => {
+    const isActive = scene.id === sceneId;
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
+    scene.hidden = !isActive;
+    scene.classList.toggle('active', isActive);
+  });
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 
   function wireNavigation() {
