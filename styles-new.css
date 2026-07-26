@@ -1,0 +1,285 @@
+:root {
+  --cream: #f7f1e6;
+  --paper: #fffdf7;
+  --ink: #243126;
+  --olive: #65724e;
+  --olive-dark: #3f4c35;
+  --gold: #b6974f;
+  --terracotta: #a94f32;
+  --shadow: 0 24px 70px rgba(44, 52, 39, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================
+   STRUCTURE
+========================= */
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.scene {
+  display: none;
+  min-height: 100vh;
+  padding: 32px 20px;
+  place-items: center;
+  text-align: center;
+}
+
+.scene.active {
+  display: grid;
+}
+
+/* =========================
+   ENVELOPPE
+========================= */
+
+#envelopeScene {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, #fffdf7 0%, transparent 45%),
+    var(--cream);
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+}
+
+.envelope-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  width: min(82vw, 520px);
+  aspect-ratio: 1.45;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  background-image:
+    linear-gradient(
+      rgba(36, 49, 38, 0.05),
+      rgba(36, 49, 38, 0.05)
+    ),
+    url("assets/20260723-09h57-JJG_NZ8_6910.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.envelope-button:hover .envelope {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 30px 80px rgba(44, 52, 39, 0.24);
+}
+
+.wax-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: grid;
+  width: 78px;
+  height: 78px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  color: #fff8ed;
+  background: var(--terracotta);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 22px rgba(65, 32, 20, 0.25);
+  font-size: 18px;
+}
+
+.envelope-hint {
+  margin-top: 26px;
+  font-family: Arial, sans-serif;
+  color: #5d6258;
+}
+
+/* =========================
+   CARTES
+========================= */
+
+.gallery-card,
+.invitation-card,
+.thanks-card {
+  width: min(100%, 820px);
+  padding: clamp(28px, 5vw, 60px);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 72px);
+}
+
+h2 {
+  font-size: clamp(32px, 6vw, 58px);
+}
+
+h1 span,
+h2 em {
+  color: var(--gold);
+}
+
+.intro {
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.7;
+}
+
+/* =========================
+   GALERIE
+========================= */
+
+.photo-diptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 30px 0;
+}
+
+.photo-frame {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #ece8dc;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+
+.primary-button,
+.text-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.primary-button {
+  padding: 15px 28px;
+  border-radius: 999px;
+  color: white;
+  background: var(--olive-dark);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+}
+
+.text-button {
+  padding: 10px;
+  color: var(--olive-dark);
+  background: transparent;
+  text-decoration: underline;
+}
+
+/* =========================
+   FORMULAIRE RSVP
+========================= */
+
+form {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(63, 76, 53, 0.25);
+  border-radius: 12px;
+  color: var(--ink);
+  background: white;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .scene {
+    padding: 22px 14px;
+  }
+
+  .photo-diptych {
+    grid-template-columns: 1fr;
+  }
+
+  .envelope {
+    width: min(90vw, 460px);
+  }
+
+  .wax-seal {
+    width: 66px;
+    height: 66px;
+    font-size: 16px;
+  }
+}
