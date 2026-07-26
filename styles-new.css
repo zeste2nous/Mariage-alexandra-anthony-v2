@@ -1,3 +1,7 @@
+html {
+  background: lime !important;
+}
+
 :root {
   --cream: #f7f1e6;
   --paper: #fffdf7;
