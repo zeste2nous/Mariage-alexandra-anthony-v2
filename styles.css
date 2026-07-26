@@ -687,3 +687,20 @@ fieldset {
   background: var(--terracotta) !important;
   color: #fffbed !important;
 }
+/* TEST DIAGNOSTIC */
+
+#envelopeScene {
+  background: yellow !important;
+}
+
+.envelope-button {
+  width: 600px !important;
+  height: 400px !important;
+  background: blue !important;
+}
+
+.envelope {
+  width: 600px !important;
+  height: 400px !important;
+  background: red !important;
+}
